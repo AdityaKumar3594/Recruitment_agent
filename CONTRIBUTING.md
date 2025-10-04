@@ -1,19 +1,19 @@
-# Contributing to Euron Recruitment Agent
+# Contributing to Nightingale Recruitment Agent
 
-Thank you for your interest in contributing to the Euron Recruitment Agent! This document provides guidelines for contributing to the project.
+Thank you for your interest in contributing to the Nightingale Recruitment Agent! This document provides guidelines for contributing to the project.
 
 ## 🚀 Getting Started
 
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/your-username/euron-recruitment-agent.git
-   cd euron-recruitment-agent
+   git clone https://github.com/your-username/Nightingale-recruitment-agent.git
+   cd Nightingale-recruitment-agent
    ```
 3. **Set up the development environment**:
    ```bash
-   conda create -n euron python==3.11 -y
-   conda activate euron
+   conda create -n Nightingale python==3.11 -y
+   conda activate Nightingale
    pip install -r requirements.txt
    python install_optional.py
    ```
@@ -26,6 +26,7 @@ Thank you for your interest in contributing to the Euron Recruitment Agent! This
 ## 🔧 Development Setup
 
 ### Testing Your Changes
+
 ```bash
 # Run setup test
 python test_setup.py
@@ -35,6 +36,7 @@ python run_app.py
 ```
 
 ### Code Style
+
 - Follow PEP 8 guidelines
 - Use meaningful variable names
 - Add docstrings to functions
@@ -43,7 +45,8 @@ python run_app.py
 ## 📝 How to Contribute
 
 ### Reporting Bugs
-1. Check if the bug is already reported in [Issues](https://github.com/your-username/euron-recruitment-agent/issues)
+
+1. Check if the bug is already reported in [Issues](https://github.com/your-username/Nightingale-recruitment-agent/issues)
 2. Create a new issue with:
    - Clear description of the bug
    - Steps to reproduce
@@ -51,13 +54,15 @@ python run_app.py
    - System information (OS, Python version)
 
 ### Suggesting Features
-1. Check existing [Issues](https://github.com/your-username/euron-recruitment-agent/issues) for similar requests
+
+1. Check existing [Issues](https://github.com/your-username/Nightingale-recruitment-agent/issues) for similar requests
 2. Create a new issue with:
    - Clear description of the feature
    - Use case and benefits
    - Possible implementation approach
 
 ### Submitting Changes
+
 1. **Create a branch** for your feature:
    ```bash
    git checkout -b feature/your-feature-name
@@ -73,18 +78,21 @@ python run_app.py
 ## 🎯 Areas for Contribution
 
 ### High Priority
+
 - [ ] PDF/DOCX export functionality
 - [ ] Additional industry templates
 - [ ] Resume parsing improvements
 - [ ] Performance optimizations
 
 ### Medium Priority
+
 - [ ] Multi-language support
 - [ ] Batch resume processing
 - [ ] Advanced analytics dashboard
 - [ ] Integration with job boards
 
 ### Low Priority
+
 - [ ] Dark mode theme
 - [ ] Mobile responsiveness
 - [ ] Additional chart types
@@ -93,12 +101,14 @@ python run_app.py
 ## 🧪 Testing
 
 ### Manual Testing
+
 - Test with different resume formats (PDF, TXT)
 - Try various job descriptions
 - Test all tabs and features
 - Verify API error handling
 
 ### Automated Testing
+
 ```bash
 # Run basic tests
 python test_setup.py
@@ -110,6 +120,7 @@ python -m pytest tests/ (when available)
 ## 📚 Documentation
 
 When contributing, please:
+
 - Update README.md if adding new features
 - Add docstrings to new functions
 - Update requirements.txt if adding dependencies
@@ -131,8 +142,9 @@ When contributing, please:
 ## 🏆 Recognition
 
 Contributors will be recognized in:
+
 - README.md contributors section
 - Release notes
 - Project documentation
 
-Thank you for contributing to Euron Recruitment Agent! 🎯
+Thank you for contributing to Nightingale Recruitment Agent! 🎯

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test script to verify Euron Recruitment Agent setup.
+Test script to verify Nightingale Recruitment Agent setup.
 Run this to check if everything is working correctly.
 """
 
@@ -92,7 +92,7 @@ def test_agent_creation():
         return False
 
 def main():
-    print("🎯 Euron Recruitment Agent - Setup Test")
+    print("🎯 Nightingale Recruitment Agent - Setup Test")
     print("=" * 50)
     
     # Test imports

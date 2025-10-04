@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# 🎯 Euron Recruitment Agent - GitHub Setup Script
+# 🎯 Nightingale Recruitment Agent - GitHub Setup Script
 # This script helps you push your project to GitHub
 
-echo "🎯 Euron Recruitment Agent - GitHub Setup"
+echo "🎯 Nightingale Recruitment Agent - GitHub Setup"
 echo "=========================================="
 
 # Check if git is initialized
@@ -23,7 +23,7 @@ if git diff --staged --quiet; then
     echo "ℹ️  No changes to commit"
 else
     echo "💾 Committing changes..."
-    git commit -m "🎯 Euron Recruitment Agent: Complete AI-powered resume analysis system
+    git commit -m "🎯 Nightingale Recruitment Agent: Complete AI-powered resume analysis system
 
 Features:
 - Resume analysis with skill scoring
@@ -32,7 +32,7 @@ Features:
 - ATS optimization
 - Multiple export formats
 - Industry-specific templates
-- Modern Euron-themed UI
+- Modern Nightingale-themed UI
 
 Tech Stack: Python, Streamlit, Groq AI, OpenAI (optional)
 "
@@ -51,9 +51,9 @@ else
     echo "Please follow these steps:"
     echo ""
     echo "1. Go to https://github.com/new"
-    echo "2. Create a new repository named: euron-recruitment-agent"
+    echo "2. Create a new repository named: Nightingale-recruitment-agent"
     echo "3. Don't initialize with README (we already have files)"
-    echo "4. Copy the repository URL (e.g., https://github.com/username/euron-recruitment-agent.git)"
+    echo "4. Copy the repository URL (e.g., https://github.com/username/Nightingale-recruitment-agent.git)"
     echo ""
     read -p "Enter your GitHub repository URL: " repo_url
     

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Installation script for optional Euron Recruitment Agent dependencies.
+Installation script for optional Nightingale Recruitment Agent dependencies.
 Run this script to install enhanced features like vector embeddings.
 """
 
@@ -18,7 +18,7 @@ def install_package(package):
         return False
 
 def main():
-    print("🚀 Euron Recruitment Agent - Optional Dependencies Installer")
+    print("🚀 Nightingale Recruitment Agent - Optional Dependencies Installer")
     print("=" * 60)
     
     # Essential packages for enhanced functionality

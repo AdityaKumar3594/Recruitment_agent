@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Clean startup script for Euron Recruitment Agent.
+Clean startup script for Nightingale Recruitment Agent.
 This script suppresses unnecessary warnings and starts the Streamlit app.
 """
 
@@ -19,7 +19,7 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 def main():
     """Run the Streamlit app with clean output."""
-    print("🎯 Starting Euron Recruitment Agent...")
+    print("🎯 Starting Nightingale Recruitment Agent...")
     print("📍 Open your browser to: http://localhost:8501")
     print("🔧 Press Ctrl+C to stop the server")
     print("-" * 50)
@@ -30,7 +30,7 @@ def main():
         sys.argv = ["streamlit", "run", "app.py", "--server.headless", "true"]
         stcli.main()
     except KeyboardInterrupt:
-        print("\n👋 Euron Recruitment Agent stopped.")
+        print("\n👋 Nightingale Recruitment Agent stopped.")
     except Exception as e:
         print(f"❌ Error starting app: {e}")
         print("💡 Try running directly: streamlit run app.py")

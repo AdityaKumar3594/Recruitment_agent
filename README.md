@@ -1,16 +1,18 @@
-# 🎯 Euron Recruitment Agent
+# 🎯 Nightingale Recruitment Agent
 
 Smart Resume Analysis & Interview Preparation System powered by Groq AI.
 
 ## 🚀 Quick Start
 
 ### 1. Create Environment
+
 ```bash
-conda create -n euron python==3.11 -y
-conda activate euron
+conda create -n Nightingale python==3.11 -y
+conda activate Nightingale
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 # Install essential packages
 pip install -r requirements.txt
@@ -20,7 +22,9 @@ python install_optional.py
 ```
 
 ### 3. Configure API Keys
+
 Create a `.env` file or set in the app:
+
 ```
 GROQ_API_KEY=your_groq_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here  # Optional for enhanced features
@@ -29,16 +33,19 @@ OPENAI_API_KEY=your_openai_api_key_here  # Optional for enhanced features
 ### 4. Run Application
 
 **Option 1: Clean startup (recommended)**
+
 ```bash
 python run_app.py
 ```
 
 **Option 2: Direct streamlit**
+
 ```bash
 streamlit run app.py
 ```
 
 **Option 3: With custom port**
+
 ```bash
 streamlit run app.py --server.port 8502
 ```
@@ -49,7 +56,7 @@ streamlit run app.py --server.port 8502
 - **Interview Questions**: Personalized question generation
 - **Resume Q&A**: Interactive resume querying
 - **Improvement Suggestions**: Detailed feedback and recommendations
-- **Modern UI**: Professional Euron-themed interface
+- **Modern UI**: Professional Nightingale-themed interface
 
 ## 🔧 API Keys
 

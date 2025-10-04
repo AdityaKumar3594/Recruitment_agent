@@ -1,11 +1,11 @@
-# 🏗️ Euron Recruitment Agent - Architecture
+# 🏗️ Nightingale Recruitment Agent - Architecture
 
-This document describes the architecture and structure of the Euron Recruitment Agent.
+This document describes the architecture and structure of the Nightingale Recruitment Agent.
 
 ## 📁 Project Structure
 
 ```
-euron-recruitment-agent/
+Nightingale-recruitment-agent/
 ├── 📄 app.py                 # Main Streamlit application
 ├── 🤖 agents.py              # Core AI agent logic
 ├── 🎨 ui.py                  # UI components and styling
@@ -24,6 +24,7 @@ euron-recruitment-agent/
 ## 🧩 Core Components
 
 ### 1. **app.py** - Main Application
+
 - **Purpose**: Streamlit web interface
 - **Key Features**:
   - Multi-tab interface (Analysis, Q&A, Interview, Improvement, Export)
@@ -32,6 +33,7 @@ euron-recruitment-agent/
   - Error handling and user feedback
 
 ### 2. **agents.py** - AI Agent Logic
+
 - **Purpose**: Core resume analysis functionality
 - **Key Classes**:
   - `ResumeAnalysisAgent`: Main analysis engine
@@ -44,9 +46,10 @@ euron-recruitment-agent/
   - ATS optimization
 
 ### 3. **ui.py** - User Interface Components
+
 - **Purpose**: Reusable UI components and styling
 - **Key Functions**:
-  - Custom CSS themes (Euron branding)
+  - Custom CSS themes (Nightingale branding)
   - Chart generation (Plotly)
   - Results display components
   - Interview question display
@@ -60,12 +63,12 @@ graph TD
     C --> D[AI Processing via Groq]
     D --> E[Results Generation]
     E --> F[UI Display]
-    
+
     G[Job Description] --> H[Skills Extraction]
     H --> C
-    
+
     I[Manual Skills] --> C
-    
+
     E --> J[Interview Questions]
     E --> K[Resume Improvement]
     E --> L[ATS Optimization]
@@ -74,21 +77,25 @@ graph TD
 ## 🧠 AI Processing Pipeline
 
 ### 1. **Text Extraction**
+
 ```python
 PDF/TXT → PyPDF2/Text Reader → Raw Text
 ```
 
 ### 2. **Skills Analysis**
+
 ```python
 Raw Text + Skills List → Groq LLM → Skill Scores (0-10)
 ```
 
 ### 3. **Vector Processing** (Optional)
+
 ```python
 Text → OpenAI Embeddings → FAISS Vector Store → RAG Queries
 ```
 
 ### 4. **Resume Enhancement**
+
 ```python
 Original Resume + Analysis → Groq LLM → Improved Resume
 ```
@@ -96,11 +103,13 @@ Original Resume + Analysis → Groq LLM → Improved Resume
 ## 🔌 API Integration
 
 ### **Groq API** (Required)
+
 - **Model**: `llama-3.1-70b-versatile`
 - **Usage**: All LLM processing
 - **Fallback**: Direct HTTP client if langchain unavailable
 
 ### **OpenAI API** (Optional)
+
 - **Model**: `text-embedding-ada-002`
 - **Usage**: Vector embeddings for enhanced search
 - **Fallback**: Direct text analysis
@@ -108,14 +117,16 @@ Original Resume + Analysis → Groq LLM → Improved Resume
 ## 🎨 UI Architecture
 
 ### **Theme System**
-- **Primary Color**: `#e74c3c` (Euron Red)
+
+- **Primary Color**: `#e74c3c` (Nightingale Red)
 - **Secondary Color**: `#c0392b` (Dark Red)
 - **Framework**: Streamlit with custom CSS
 
 ### **Component Structure**
+
 ```
 Main App
-├── Header (Euron Branding)
+├── Header (Nightingale Branding)
 ├── Sidebar (Configuration)
 └── Tabs
     ├── Resume Analysis
@@ -128,6 +139,7 @@ Main App
 ## 🔧 Configuration Management
 
 ### **Environment Variables**
+
 ```bash
 GROQ_API_KEY=required
 OPENAI_API_KEY=optional
@@ -135,6 +147,7 @@ CUTOFF_SCORE=75
 ```
 
 ### **Session State**
+
 - `analysis_result`: Resume analysis data
 - `agent`: ResumeAnalysisAgent instance
 - `interview_questions`: Generated questions
@@ -143,11 +156,13 @@ CUTOFF_SCORE=75
 ## 🚀 Deployment Options
 
 ### **Local Development**
+
 ```bash
 python run_app.py
 ```
 
 ### **Production Deployment**
+
 - **Streamlit Cloud**: Direct GitHub integration
 - **Docker**: Containerized deployment
 - **Heroku**: Web app hosting
@@ -156,11 +171,13 @@ python run_app.py
 ## 🔒 Security Considerations
 
 ### **API Key Protection**
+
 - Environment variables only
 - Never committed to git
 - Masked in UI inputs
 
 ### **Data Privacy**
+
 - No resume data stored permanently
 - Temporary files cleaned up
 - API calls over HTTPS
@@ -168,11 +185,13 @@ python run_app.py
 ## 📊 Performance Optimization
 
 ### **Caching Strategy**
+
 - Session state for analysis results
 - Streamlit caching for UI components
 - API response caching (future)
 
 ### **Error Handling**
+
 - Graceful API failures
 - Fallback processing modes
 - User-friendly error messages
@@ -180,6 +199,7 @@ python run_app.py
 ## 🔮 Future Architecture
 
 ### **Planned Enhancements**
+
 - Database integration for resume storage
 - User authentication system
 - Batch processing capabilities
@@ -187,6 +207,7 @@ python run_app.py
 - Multi-language support
 
 ### **Scalability Considerations**
+
 - Microservices architecture
 - Queue-based processing
 - Load balancing
@@ -195,14 +216,16 @@ python run_app.py
 ## 🧪 Testing Strategy
 
 ### **Current Testing**
+
 - Setup verification (`test_setup.py`)
 - Manual UI testing
 - API connection testing
 
 ### **Future Testing**
+
 - Unit tests for core functions
 - Integration tests for API calls
 - UI automation tests
 - Performance benchmarking
 
-This architecture provides a solid foundation for the Euron Recruitment Agent while maintaining flexibility for future enhancements.
+This architecture provides a solid foundation for the Nightingale Recruitment Agent while maintaining flexibility for future enhancements.

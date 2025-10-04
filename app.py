@@ -3,7 +3,8 @@ import os
 import warnings
 from dotenv import load_dotenv
 from agents import ResumeAnalysisAgent
-from ui import setup_page, display_analysis_results, display_interview_questions, apply_euron_theme
+from ui import setup_page, display_analysis_results, display_interview_questions, apply_Nightingale_theme
+import torch
 
 # Suppress warnings for cleaner output
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -15,7 +16,7 @@ load_dotenv()
 
 def main():
     st.set_page_config(
-        page_title="Euron Recruitment Agent",
+        page_title="Nightingale Recruitment Agent",
         page_icon="🎯",
         layout="wide",
         initial_sidebar_state="expanded"
@@ -23,11 +24,11 @@ def main():
     
     setup_page()
     
-    # Header with Euron branding
+    # Header with Nightingale branding
     st.markdown("""
     <div style="background: linear-gradient(90deg, #e74c3c, #c0392b); padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
         <h1 style="color: white; text-align: center; margin: 0; font-size: 3rem; font-weight: bold;">
-            Euron Recruitment Agent
+            Nightingale Recruitment Agent
         </h1>
         <p style="color: white; text-align: center; margin: 0.5rem 0 0 0; font-size: 1.2rem;">
             Smart Resume Analysis & Interview Preparation System
@@ -70,7 +71,7 @@ def main():
         )
         
         st.markdown("---")
-        st.markdown("### 🎯 Euron Recruitment Agent")
+        st.markdown("### 🎯 Nightingale Recruitment Agent")
         st.markdown("Advanced AI-powered recruitment analysis using Groq's lightning-fast LLM processing for comprehensive resume evaluation and interview preparation.")
     
     if not groq_api_key:

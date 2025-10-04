@@ -10,16 +10,16 @@ def apply_custom_css():
     """Apply custom CSS styling to the Streamlit app."""
     st.markdown("""
     <style>
-    /* Euron Theme Colors */
+    /* Nightingale Theme Colors */
     :root {
-        --euron-red: #e74c3c;
-        --euron-dark-red: #c0392b;
-        --euron-light-red: #f1c0c0;
+        --Nightingale-red: #e74c3c;
+        --Nightingale-dark-red: #c0392b;
+        --Nightingale-light-red: #f1c0c0;
     }
     
     .main-header {
         font-size: 2.5rem;
-        color: var(--euron-red);
+        color: var(--Nightingale-red);
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -28,7 +28,7 @@ def apply_custom_css():
         background-color: #f8f9fa;
         padding: 1rem;
         border-radius: 0.5rem;
-        border-left: 4px solid var(--euron-red);
+        border-left: 4px solid var(--Nightingale-red);
         margin: 0.5rem 0;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
@@ -104,7 +104,7 @@ def apply_custom_css():
     }
     
     .stTabs [aria-selected="true"] {
-        background-color: var(--euron-red) !important;
+        background-color: var(--Nightingale-red) !important;
         color: white !important;
     }
     
@@ -117,7 +117,7 @@ def apply_custom_css():
     }
     
     .stButton > button[kind="primary"] {
-        background: linear-gradient(90deg, var(--euron-red), var(--euron-dark-red));
+        background: linear-gradient(90deg, var(--Nightingale-red), var(--Nightingale-dark-red));
         color: white;
     }
     
@@ -142,13 +142,13 @@ def apply_custom_css():
     </style>
     """, unsafe_allow_html=True)
 
-def apply_euron_theme():
-    """Apply the Euron Recruitment Agent theme."""
+def apply_Nightingale_theme():
+    """Apply the Nightingale Recruitment Agent theme."""
     apply_custom_css()
 
 def setup_page():
     """Setup the main page configuration and styling."""
-    apply_euron_theme()
+    apply_Nightingale_theme()
 
 def display_score_gauge(score, title="Overall Score"):
     """Display a gauge chart for the overall score."""
@@ -190,7 +190,7 @@ def display_skills_chart(skills_scores):
     skills = list(skills_scores.keys())
     scores = list(skills_scores.values())
     
-    # Create color mapping based on score with Euron theme
+    # Create color mapping based on score with Nightingale theme
     colors = ['#e74c3c' if score <= 5 else '#f39c12' if score <= 7 else '#27ae60' for score in scores]
     
     fig = go.Figure(data=[

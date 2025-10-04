@@ -1,6 +1,6 @@
-# 🚀 Deployment Guide - Euron Recruitment Agent
+# 🚀 Deployment Guide - Nightingale Recruitment Agent
 
-This guide covers various deployment options for the Euron Recruitment Agent.
+This guide covers various deployment options for the Nightingale Recruitment Agent.
 
 ## 📋 Pre-deployment Checklist
 
@@ -13,6 +13,7 @@ This guide covers various deployment options for the Euron Recruitment Agent.
 ## 🐙 GitHub Setup
 
 ### 1. Create Repository
+
 ```bash
 # Initialize git (if not already done)
 git init
@@ -21,10 +22,10 @@ git init
 git add .
 
 # Initial commit
-git commit -m "🎯 Initial commit: Euron Recruitment Agent v1.0"
+git commit -m "🎯 Initial commit: Nightingale Recruitment Agent v1.0"
 
 # Add remote repository (replace with your GitHub repo URL)
-git remote add origin https://github.com/your-username/euron-recruitment-agent.git
+git remote add origin https://github.com/your-username/Nightingale-recruitment-agent.git
 
 # Push to GitHub
 git branch -M main
@@ -32,6 +33,7 @@ git push -u origin main
 ```
 
 ### 2. Repository Settings
+
 - Add repository description: "Smart Resume Analysis & Interview Preparation System powered by Groq AI"
 - Add topics: `ai`, `resume-analysis`, `streamlit`, `groq`, `recruitment`, `interview-prep`
 - Enable Issues and Discussions
@@ -40,6 +42,7 @@ git push -u origin main
 ## ☁️ Streamlit Cloud Deployment
 
 ### 1. Connect to GitHub
+
 1. Go to [share.streamlit.io](https://share.streamlit.io)
 2. Sign in with GitHub
 3. Click "New app"
@@ -47,7 +50,9 @@ git push -u origin main
 5. Set main file path: `app.py`
 
 ### 2. Configure Secrets
+
 In Streamlit Cloud dashboard, add secrets:
+
 ```toml
 [secrets]
 GROQ_API_KEY = "your_groq_api_key_here"
@@ -56,12 +61,14 @@ CUTOFF_SCORE = "75"
 ```
 
 ### 3. Deploy
+
 - Click "Deploy"
 - Your app will be available at: `https://your-app-name.streamlit.app`
 
 ## 🐳 Docker Deployment
 
 ### 1. Create Dockerfile
+
 ```dockerfile
 FROM python:3.11-slim
 
@@ -83,31 +90,36 @@ ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.addres
 ```
 
 ### 2. Build and Run
+
 ```bash
 # Build image
-docker build -t euron-recruitment-agent .
+docker build -t Nightingale-recruitment-agent .
 
 # Run container
 docker run -p 8501:8501 \
   -e GROQ_API_KEY=your_key_here \
   -e OPENAI_API_KEY=your_key_here \
-  euron-recruitment-agent
+  Nightingale-recruitment-agent
 ```
 
 ## 🌐 Heroku Deployment
 
 ### 1. Create Heroku Files
+
 **Procfile:**
+
 ```
 web: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
 ```
 
 **runtime.txt:**
+
 ```
 python-3.11.6
 ```
 
 ### 2. Deploy to Heroku
+
 ```bash
 # Install Heroku CLI and login
 heroku login
@@ -126,6 +138,7 @@ git push heroku main
 ## ☁️ AWS Deployment
 
 ### 1. EC2 Instance
+
 ```bash
 # Launch EC2 instance (Ubuntu 22.04)
 # SSH into instance
@@ -136,8 +149,8 @@ sudo apt update
 sudo apt install python3-pip nginx -y
 
 # Clone repository
-git clone https://github.com/your-username/euron-recruitment-agent.git
-cd euron-recruitment-agent
+git clone https://github.com/your-username/Nightingale-recruitment-agent.git
+cd Nightingale-recruitment-agent
 
 # Install Python dependencies
 pip3 install -r requirements.txt
@@ -149,15 +162,16 @@ cp .env.example .env
 
 # Run with PM2 (process manager)
 sudo npm install -g pm2
-pm2 start "streamlit run app.py --server.port=8501" --name euron-app
+pm2 start "streamlit run app.py --server.port=8501" --name Nightingale-app
 ```
 
 ### 2. Configure Nginx
+
 ```nginx
 server {
     listen 80;
     server_name your-domain.com;
-    
+
     location / {
         proxy_pass http://localhost:8501;
         proxy_http_version 1.1;
@@ -172,6 +186,7 @@ server {
 ## 🔧 Environment Configuration
 
 ### Production Environment Variables
+
 ```bash
 # Required
 GROQ_API_KEY=your_production_groq_key
@@ -187,12 +202,14 @@ STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
 ## 📊 Monitoring & Maintenance
 
 ### Health Checks
+
 - Monitor API response times
 - Check error rates
 - Monitor resource usage
 - Set up alerts for failures
 
 ### Updates
+
 ```bash
 # Pull latest changes
 git pull origin main
@@ -201,13 +218,14 @@ git pull origin main
 pip install -r requirements.txt
 
 # Restart application
-pm2 restart euron-app  # For PM2
+pm2 restart Nightingale-app  # For PM2
 # or restart your deployment service
 ```
 
 ## 🔒 Security Best Practices
 
 ### Production Security
+
 - Use HTTPS only
 - Implement rate limiting
 - Monitor API usage
@@ -215,6 +233,7 @@ pm2 restart euron-app  # For PM2
 - Backup strategies
 
 ### API Key Management
+
 - Use environment variables
 - Rotate keys regularly
 - Monitor usage quotas
@@ -223,12 +242,14 @@ pm2 restart euron-app  # For PM2
 ## 📈 Scaling Considerations
 
 ### Horizontal Scaling
+
 - Load balancer setup
 - Multiple app instances
 - Database for session storage
 - CDN for static assets
 
 ### Performance Optimization
+
 - Caching strategies
 - API response optimization
 - Resource monitoring
@@ -237,12 +258,14 @@ pm2 restart euron-app  # For PM2
 ## 🆘 Troubleshooting
 
 ### Common Issues
+
 - **Port conflicts**: Change port in configuration
 - **API limits**: Monitor usage and upgrade plans
 - **Memory issues**: Increase instance size
 - **SSL errors**: Check certificate configuration
 
 ### Debugging
+
 ```bash
 # Check logs
 streamlit run app.py --logger.level=debug

@@ -6,7 +6,7 @@ import os
 import json
 from concurrent.futures import ThreadPoolExecutor
 
-torch.classes.__path__ = []
+
 
 # Try to import optional dependencies
 try:
