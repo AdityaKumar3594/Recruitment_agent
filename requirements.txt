@@ -16,3 +16,4 @@ langchain-groq>=0.1.0
 faiss-cpu>=1.8.0
 openai>=1.10.0
 groq>=0.4.0
+torch

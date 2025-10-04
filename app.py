@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import warnings
+import torch
 from dotenv import load_dotenv
 from agents import ResumeAnalysisAgent
 from ui import setup_page, display_analysis_results, display_interview_questions, apply_Nightingale_theme
