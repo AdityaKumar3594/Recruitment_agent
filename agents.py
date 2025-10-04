@@ -100,7 +100,7 @@ class ResumeAnalysisAgent:
         
         # Initialize LLM client
         if GROQ_AVAILABLE:
-            self.llm_client = ChatGroq(model="openai/gpt-oss-120b", api_key=self.groq_api_key, temperature=0)
+            self.llm_client = ChatGroq(model="qwen/qwen3-32b", api_key=self.groq_api_key, temperature=0)
         elif REQUESTS_AVAILABLE:
             self.llm_client = SimpleGroqClient(self.groq_api_key)
         else:
@@ -396,7 +396,7 @@ class ResumeAnalysisAgent:
             
         retriever = vectorstore.as_retriever()
         qa_chain = RetrievalQA.from_chain_type(
-            llm=self.llm_client if GROQ_AVAILABLE else ChatGroq(model="openai/gpt-oss-120b", api_key=self.groq_api_key, temperature=0),
+            llm=self.llm_client if GROQ_AVAILABLE else ChatGroq(model="qwen/qwen3-32b", api_key=self.groq_api_key, temperature=0),
             chain_type="stuff",
             retriever=retriever,
             return_source_documents=False
@@ -509,7 +509,7 @@ class ResumeAnalysisAgent:
             try:
                 retriever = self.rag_vectorstore.as_retriever(search_kwargs={"k":3})
                 qa_chain = RetrievalQA.from_chain_type(
-                    llm=self.llm_client if GROQ_AVAILABLE else ChatGroq(model="openai/gpt-oss-120b", api_key=self.groq_api_key, temperature=0),
+                    llm=self.llm_client if GROQ_AVAILABLE else ChatGroq(model="qwen/qwen3-32b", api_key=self.groq_api_key, temperature=0),
                     chain_type="stuff",
                     retriever=retriever,
                     return_source_documents=False
